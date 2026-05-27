@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quests</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app" class="app hidden" aria-hidden="true">
+    <div class="overlay" data-close="1"></div>
+
+    <section class="panel" role="dialog" aria-modal="true">
+      <header class="top">
+        <div class="brand">
+          <div class="dot"></div>
+          <div class="titles">
+            <div class="kicker">QUESTS</div>
+            <div class="headline">Track objectives and get things done</div>
+          </div>
+        </div>
+
+        <div class="right">
+          <div id="discord" class="discord hidden">
+            <div class="tag">DISCORD</div>
+            <div class="link"></div>
+          </div>
+
+          <button id="btnClose" class="iconBtn" title="Close">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.71 12 12l6.3 6.29-1.41 1.42L10.59 13.4 4.29 19.71 2.88 18.3 9.17 12 2.88 5.71 4.29 4.29l6.3 6.3 6.29-6.3z"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="content">
+        <aside class="left">
+          <div class="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L20 21.5 21.5 20l-6-6zM9.5 14A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+            <input id="qSearch" type="text" placeholder="Search quests..." />
+          </div>
+
+          <div id="questList" class="list" role="list"></div>
+
+          <div class="footerHint">
+            <div class="hintKey">/quests</div>
+            <div class="hintTxt">Toggle • Track quests • Visit targets to complete</div>
+          </div>
+        </aside>
+
+        <main class="rightPane">
+          <div id="empty" class="empty">
+            <div class="emptyIcon">
+              <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.8 9.74 8 11 4.2-1.26 8-6 8-11V5l-8-3zm0 18c-3.1-1.1-6-4.8-6-9V6.3L12 4l6 2.3V11c0 4.2-2.9 7.9-6 9z"/></svg>
+            </div>
+            <div class="emptyTitle">Select a quest</div>
+            <div class="emptySub">Pick one on the left to view details and start tracking.</div>
+          </div>
+
+          <div id="details" class="details hidden">
+            <div class="heroCard">
+              <div class="heroGlow"></div>
+              <div class="heroInner">
+                <div class="heroTop">
+                  <div>
+                    <div id="dTitle" class="dTitle">Quest Title</div>
+                    <div id="dDesc" class="dDesc">Quest description…</div>
+                  </div>
+                  <div id="dStatus" class="pill">NEW</div>
+                </div>
+
+                <div class="progressWrap">
+                  <div class="progressMeta">
+                    <div id="dProgressText" class="progText">0/0</div>
+                    <div id="dActive" class="activeTag hidden">ACTIVE</div>
+                  </div>
+                  <div class="progressBar"><div id="dProgressBar" class="bar"></div></div>
+                </div>
+
+                <div class="actions">
+                  <button id="btnTrack" class="btn primary">
+                    <span class="btnDot"></span>
+                    Track Quest
+                  </button>
+                  <button id="btnUntrack" class="btn ghost hidden">Untrack</button>
+                  <button id="btnReset" class="btn danger" title="Reset this quest back to 0">
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="steps">
+              <div class="stepsHead">
+                <div class="stepsTitle">Objectives</div>
+                <div id="stepsMeta" class="stepsMeta">—</div>
+              </div>
+              <div id="stepList" class="stepList"></div>
+            </div>
+          </div>
+
+        </main>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
